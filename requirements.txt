@@ -2,4 +2,4 @@ streamlit
 groq
 Pillow
 pandas
-dotenv
+python-dotenv
