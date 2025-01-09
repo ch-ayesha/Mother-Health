@@ -534,9 +534,6 @@ def main():
         nutritionist_menu()
     elif st.session_state.navigation == "Educational Library":
         educational_library()
-    elif st.session_state.navigation == "Resources":
-        st.title("Resources - Coming Soon")
-        st.write("This feature is under development.")
 
 if __name__ == "__main__":
     main()
