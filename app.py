@@ -236,6 +236,159 @@ def nutritionist_menu():
         for personalized nutrition advice during pregnancy.
         """)
 
+# Function for the Educational Library Tab
+def educational_library():
+    st.title("Educational Library - Pregnancy Resources")
+    
+    # Welcome message
+    st.write("""
+    Welcome to our Educational Library! Here, you'll find comprehensive resources to guide you through every aspect of pregnancy, from early stages to postpartum care.
+    """)
+
+    # Sidebar to choose a topic
+    topic = st.sidebar.selectbox(
+        "Choose a section:",
+        ["Pregnancy Stages & Development", "Nutrition and Diet Guides", "Exercise & Fitness", 
+         "Mental Health & Emotional Well-being", "Common Pregnancy Symptoms", "Prenatal Care & Medical Tests", 
+         "Childbirth Preparation", "Postpartum Care", "Baby Care Basics", "Expert Articles & Research", 
+         "Pregnancy & Parenting Blogs", "Interactive Quizzes", "Pregnancy Glossary", "FAQ", "Interactive Journals"]
+    )
+
+    # Pregnancy Stages & Development
+    if topic == "Pregnancy Stages & Development":
+        st.subheader("Pregnancy Stages & Development")
+        st.write("""
+        Learn what to expect each month during pregnancy, from fetal development to physical changes in the body.
+        """)
+        st.image("https://example.com/pregnancy_stages_image.jpg", caption="Pregnancy Development Stages")
+        
+        st.write("""
+        **First Trimester** (0-12 Weeks):
+        - Key Development: The embryo forms organs and structures.
+        - Symptoms: Morning sickness, fatigue, and nausea.
+
+        **Second Trimester** (13-26 Weeks):
+        - Key Development: Fetal movement, developing organs.
+        - Symptoms: Reduced nausea, increased energy.
+
+        **Third Trimester** (27-40 Weeks):
+        - Key Development: Baby grows rapidly, prepares for birth.
+        - Symptoms: Physical discomfort, back pain, frequent urination.
+
+        For more details on each month, check out these guides:
+        - [First Trimester Guide](https://example.com/first_trimester)
+        - [Second Trimester Guide](https://example.com/second_trimester)
+        - [Third Trimester Guide](https://example.com/third_trimester)
+        """)
+
+    # Nutrition and Diet Guides
+    elif topic == "Nutrition and Diet Guides":
+        st.subheader("Nutrition and Diet Guides")
+        st.write("""
+        Proper nutrition during pregnancy is essential for both you and your baby. Here's a breakdown of what to eat during each trimester.
+        """)
+        
+        st.write("""
+        **First Trimester**:
+        - Focus on folic acid, vitamin D, and iron-rich foods like leafy greens, eggs, and fortified cereals.
+
+        **Second Trimester**:
+        - Add more protein-rich foods like beans, lentils, and lean meats. Focus on calcium and vitamin D for strong bones.
+
+        **Third Trimester**:
+        - Focus on healthy fats, whole grains, and continue to include calcium and protein-rich foods.
+        """)
+
+        # Interactive Meal Planner (This will be a simple input and suggestion tool)
+        st.write("**Dietary Preferences**")
+        dietary_preference = st.selectbox(
+            "Select your dietary preference:",
+            ["Vegetarian", "Non-Vegetarian", "Vegan", "Gluten-Free", "No preference"]
+        )
+
+        if dietary_preference:
+            st.write(f"Suggested meal plan for {dietary_preference} diet:")
+            # You can enhance this by providing actual meal recommendations based on input
+            st.write("Breakfast: Oatmeal with nuts and fruits")
+            st.write("Lunch: Grilled chicken with quinoa and salad")
+            st.write("Dinner: Stir-fried vegetables with tofu")
+
+    # Exercise & Fitness for Pregnant Women
+    elif topic == "Exercise & Fitness":
+        st.subheader("Exercise & Fitness for Pregnant Women")
+        st.write("""
+        Staying active during pregnancy can help you feel better and prepare for childbirth. Here are some safe exercises.
+        """)
+        st.video("https://www.youtube.com/watch?v=exercise_video_id", caption="Pregnancy Fitness Video")
+        
+        st.write("""
+        **Recommended Exercises:**
+        - **Walking:** Low-impact and safe for all trimesters.
+        - **Yoga:** Helps with flexibility and reduces stress.
+        - **Pelvic Floor Exercises:** Strengthen muscles for labor.
+        """)
+
+    # Mental Health & Emotional Well-being
+    elif topic == "Mental Health & Emotional Well-being":
+        st.subheader("Mental Health & Emotional Well-being")
+        st.write("""
+        Pregnancy is an emotional rollercoaster. It's important to manage your mental well-being during this time.
+        """)
+
+        st.write("""
+        **Tips:**
+        - Take time for yourself with relaxation and mindfulness exercises.
+        - Practice breathing techniques to manage anxiety.
+        - Talk to a professional if you feel overwhelmed.
+        """)
+
+        st.audio("https://example.com/guided_meditation.mp3", caption="Guided Meditation for Pregnancy")
+
+    # Common Pregnancy Symptoms
+    elif topic == "Common Pregnancy Symptoms":
+        st.subheader("Common Pregnancy Symptoms")
+        st.write("""
+        Here's a guide on common symptoms and how to manage them during pregnancy.
+        """)
+
+        st.write("""
+        - **Nausea & Vomiting:** Eat small meals, drink fluids, and rest.
+        - **Back Pain:** Practice good posture, use a pregnancy pillow.
+        - **Fatigue:** Rest when needed and maintain a balanced diet.
+        """)
+
+        # Symptom Tracker
+        st.write("**Track Your Symptoms**")
+        symptom = st.selectbox("Select your current symptom:", ["Nausea", "Back Pain", "Fatigue", "Headache"])
+        if symptom:
+            st.write(f"You are experiencing: {symptom}")
+            st.write("Based on your symptom, here are some remedies: ...")
+
+    # Prenatal Care & Medical Tests
+    elif topic == "Prenatal Care & Medical Tests":
+        st.subheader("Prenatal Care & Medical Tests")
+        st.write("""
+        Prenatal care is crucial during pregnancy. Here are some key tests and what to expect.
+        """)
+
+        st.write("""
+        **Key Tests**:
+        - **Blood Tests:** Check for iron levels, infections, and blood type.
+        - **Ultrasound:** Track fetal development.
+        - **Glucose Test:** Screen for gestational diabetes.
+        """)
+
+        # Interactive Test Checklist
+        st.write("**Prenatal Visit Checklist**")
+        visit_checklist = ["Discuss any concerns", "Review ultrasound results", "Ask about recommended exercises"]
+        checklist_completed = st.multiselect("Select completed items:", visit_checklist)
+        st.write(f"Completed checklist: {', '.join(checklist_completed)}")
+
+    # Continue with more sections similarly...
+
+    # **Optional**: You can implement a blog section, expert articles, quizzes, and journaling features in a similar fashion.
+
+
 def home_page():
     st.title("Welcome to Mother Health Care 👶")
 
@@ -379,9 +532,8 @@ def main():
         symptom_checker()
     elif st.session_state.navigation == "Nutritionist":
         nutritionist_menu()
-    elif st.session_state.navigation == "Educational Library":
-        st.title("Educational Library - Coming Soon")
-        st.write("This feature is under development.")
+    elif st.session_state.navigation == "educational_library":
+        educational_library()
     elif st.session_state.navigation == "Resources":
         st.title("Resources - Coming Soon")
         st.write("This feature is under development.")
