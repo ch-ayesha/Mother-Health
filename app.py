@@ -532,7 +532,7 @@ def main():
         symptom_checker()
     elif st.session_state.navigation == "Nutritionist":
         nutritionist_menu()
-    elif st.session_state.navigation == "educational_library":
+    elif st.session_state.navigation == "Educational Library":
         educational_library()
     elif st.session_state.navigation == "Resources":
         st.title("Resources - Coming Soon")
